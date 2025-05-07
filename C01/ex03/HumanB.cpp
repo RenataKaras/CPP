@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 13:22:31 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/07 13:28:53 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/07 14:27:01 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	HumanB::setWeapon(Weapon &weapon)
 	_weapon = &weapon;
 }
 
-void	HumanB::attack() const
+void	HumanB::attack()
 {
 	if (_weapon)
 		std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;

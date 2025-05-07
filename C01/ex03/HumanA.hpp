@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 12:45:39 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/07 13:15:32 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/07 14:26:40 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	HumanA
 		HumanA(const std::string &name, Weapon &weapon);
 		~HumanA();
 	
-		void	attack() const;	
+		void	attack();
 };
 
 

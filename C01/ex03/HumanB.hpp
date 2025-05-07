@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 12:47:23 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/07 13:27:50 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/07 14:27:10 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	HumanB(const std::string &name);
 	~HumanB();
 
-	void	attack() const;
+	void	attack();
 	void	setWeapon(Weapon &weapon);
 };
 
