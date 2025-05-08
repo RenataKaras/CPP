@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/06 14:47:52 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/06 15:21:02 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/08 16:09:06 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
 		std::string	_name;
 		
 	public:
-		Zombie(); //default contructor
+		Zombie();
 		~Zombie();
 		
 		void	announce(void);

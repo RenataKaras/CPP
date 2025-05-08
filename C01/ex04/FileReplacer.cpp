@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 14:49:05 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/07 17:07:24 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/08 15:57:04 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ void	FileReplacer::_process(std::ifstream &inFile, std::ofstream &outFile)
 	std::string	line;
 	size_t		pos;
 
-	while (std::getline(inFile, line))
+	while (std::getline(inFile, line)) //reads inFile line by line and stores each line in 'line'
 	{
 		pos = 0;
 		while (true)
 		{
-			pos = line.find(_s1, pos);
-			if (pos == std::string::npos)
+			pos = line.find(_s1, pos); //starting at index pos where the next occurence of substring _s1 is?
+			if (pos == std::string::npos) //this is what 'find' returns if there's no _s1 after pos
 				break ;
 			
 			std::string	partBefore = line.substr(0, pos);
@@ -87,8 +87,9 @@ void	FileReplacer::run()
 	if (!_validateArgs())
 		return ;
 
-	std::ifstream	inFile;
-	std::ofstream	outFile;
+	/* ifstream and ofstream behave like cin and cout but read from or write to disk instead of console */
+	std::ifstream	inFile; //an input file stream called inFile
+	std::ofstream	outFile; //an output file stream called outFile
 	
 	if (!_openFiles(inFile, outFile))
 		return ;

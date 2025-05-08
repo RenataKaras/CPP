@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 14:33:10 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/07 16:23:33 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/08 16:31:01 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cerr << "Wrong number of arguments! Please use ./replace <filename> <s1> <s2" << std::endl;
+		std::cerr << "Wrong number of arguments! Please use ./replace <filename> <s1> <s2>" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	
