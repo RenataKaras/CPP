@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 13:22:31 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/07 14:27:01 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/12 10:52:37 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 HumanB::HumanB(const std::string &name)
 {
 	_name = name;
+	_weapon = NULL;
 	std::cout << "HumanB constructor called" << std::endl;
 }
 
