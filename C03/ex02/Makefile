@@ -6,12 +6,12 @@
 #    By: rkaras <rkaras@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/05/12 15:08:39 by rkaras        #+#    #+#                  #
-#    Updated: 2025/05/20 14:43:18 by rkaras        ########   odam.nl          #
+#    Updated: 2025/05/20 14:43:10 by rkaras        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the output program
-NAME = scavtrap
+NAME = fragtrap
 
 # Compiler and flags
 CXX = c++
@@ -21,6 +21,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 SRCS = main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
+		FragTrap.cpp
 		
 OBJS = $(SRCS:.cpp=.o)
 

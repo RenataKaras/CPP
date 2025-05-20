@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/20 12:04:11 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/20 14:48:10 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/20 14:48:23 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	_name = "";
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
@@ -23,7 +22,6 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
-	_name = name;
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
@@ -32,11 +30,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
-		_name = other._name;
-		_hitPoints = other._hitPoints;
-		_energyPoints = other._energyPoints;
-		_attackDamage = other._attackDamage;
-		std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
 /* only constructors can use a member-initializer list*/
