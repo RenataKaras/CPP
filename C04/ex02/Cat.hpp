@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Animal.hpp                                         :+:    :+:            */
+/*   Cat.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/23 13:27:17 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/27 14:41:02 by rkaras        ########   odam.nl         */
+/*   Created: 2025/05/26 13:18:22 by rkaras        #+#    #+#                 */
+/*   Updated: 2025/05/27 14:38:21 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <iostream>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class	Animal
+class	Cat : public	AAnimal
 {
-	protected:
-		std::string	_type;
-	
+	private:
+		Brain	*_brain;
 	public:
-		Animal();
-		Animal(const Animal &other);
-		Animal &operator=(const Animal &other);
-		virtual ~Animal();
+		Cat();
+		Cat(const Cat &other);
+		Cat &operator=(const Cat &other);
+		~Cat();
 
-		void		setType(const std::string &type);
-		std::string	getType() const;
-		
-		virtual void		makeSound() const;
+		void	makeSound() const override;
+		Brain	*getBrain() const;
 };
 
 #endif
