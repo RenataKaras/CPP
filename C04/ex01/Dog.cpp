@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/26 12:50:30 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/26 15:47:56 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/27 13:12:12 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,9 @@ Dog::~Dog()
 void	Dog::makeSound() const
 {
 	std::cout << "Woof! Woof!" << std::endl;
+}
+
+Brain	*Dog::getBrain() const
+{
+	return (_brain);
 }

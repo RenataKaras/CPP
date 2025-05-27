@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/26 13:20:55 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/26 15:46:10 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/27 12:49:42 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ Cat::Cat(const Cat &other) : _brain(new Brain(*other._brain))
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
+/* SHALLOW copy - if a class holds raw pointers, those pointers are copied as pointers
+					and then two objects end up sharing the same underlying resource
+					- if you modify one, the other sees the change
+					- when destructors run, both of them delete the same pointer -> undefined behaviour 
+*/
 Cat	&Cat::operator=(const Cat &other)
 {
 	if (this != &other)
@@ -45,4 +50,9 @@ Cat::~Cat()
 void	Cat::makeSound() const
 {
 	std::cout << "Meow" << std::endl;
+}
+
+Brain	*Cat::getBrain() const
+{
+	return(_brain);
 }

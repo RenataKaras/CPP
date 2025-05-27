@@ -6,7 +6,7 @@
 #    By: rkaras <rkaras@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/05/26 13:40:59 by rkaras        #+#    #+#                  #
-#    Updated: 2025/05/26 14:37:10 by rkaras        ########   odam.nl          #
+#    Updated: 2025/05/27 11:37:17 by rkaras        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS = main.cpp \
 		Cat.cpp \
 		Animal.cpp \
 		WrongCat.cpp \
-		WrongAnimal.cpp 
+		WrongAnimal.cpp \
+		Brain.cpp
 		
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)

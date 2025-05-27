@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/26 15:15:57 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/26 15:20:01 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/27 12:44:23 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class	Brain
 		Brain(const Brain &other);
 		Brain &operator=(const Brain &other);
 		~Brain();
+
+		const std::string	&getIdea(int i) const;
+		void				setIdea(int i, const std::string &idea);
 };
 
 #endif
