@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/26 13:34:46 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/05/27 13:14:07 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/05/28 12:32:13 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,16 @@ int main()
 
 	}
 	{
-		std::cout << "***********Testing the WrongAnimals***********" << std::endl;
-		WrongAnimal	*array[10];
-		for (int i = 0; i < 10; ++i)
-				array[i] = new WrongCat();
+		// std::cout << "***********Testing the WrongAnimals***********" << std::endl;
+		// WrongAnimal	*array[10];
+		// for (int i = 0; i < 10; ++i)
+		// 		array[i] = new WrongCat();
 		
-		for (int i = 0; i < 10; ++i)
-			array[i]->makeSound();
+		// for (int i = 0; i < 10; ++i)
+		// 	array[i]->makeSound();
 
-		for (int i = 0; i < 10; ++i)
-			delete array[i];
+		// for (int i = 0; i < 10; ++i)
+		// 	delete array[i];
 	}
 	return 0;
 }
