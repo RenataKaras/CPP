@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/27 15:58:03 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/07/01 15:30:52 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/07/01 17:58:43 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,22 @@ class	Bureaucrat
 		void		decrementGrade();
 
 		
+		/* these are custom classes derived from std::exception, they inherit from it */
 		/* 
 		- noexcept means that this function is not supposed to propagate exceptions
 		- if an exception does escape, the runtime calls std::terminate, aborting the program
 		*/
+
 		class	GradeTooHighException : public std::exception
 		{
 			public:
-				const char	*what() const noexcept;
+				const char	*what() const noexcept override;
 		};
 
 		class	GradeTooLowException : public std::exception
 		{
 			public:
-				const char	*what() const noexcept;
+				const char	*what() const noexcept override;
 		};
 };
 
