@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/27 15:58:03 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/07/04 12:01:55 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/07/14 17:42:11 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-class	Form;
+class	AForm;
 
 class	Bureaucrat
 {
@@ -39,7 +39,8 @@ class	Bureaucrat
 		void		incrementGrade();
 		void		decrementGrade();
 
-		void		signForm(Form &formToSign) const;
+		void		signForm(AForm &formToSign) const;
+		void		executeForm(const AForm &form) const;
 
 		
 		/* these are custom classes derived from std::exception, they inherit from it */

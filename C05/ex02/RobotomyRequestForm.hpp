@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/07/04 16:28:48 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/07/04 16:33:38 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/07/14 16:58:08 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 #include "AForm.hpp"
 
-class RobotomyRequestForm : public AForm
+class	RobotomyRequestForm : public AForm
 {
 	private:
 		std::string	_target;
+		void		executeForm() const override;
 
 	public:
 		RobotomyRequestForm();

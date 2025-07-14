@@ -6,12 +6,12 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/27 17:35:12 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/07/04 12:27:23 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/07/14 18:00:00 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Jane Doe"), _grade(150)
 {
@@ -71,7 +71,7 @@ void	Bureaucrat::decrementGrade()
 	_setGrade(_grade + 1);
 }
 
-void	Bureaucrat::signForm(Form &formToSign) const
+void	Bureaucrat::signForm(AForm &formToSign) const
 {
 	try
 	{
@@ -84,6 +84,20 @@ void	Bureaucrat::signForm(Form &formToSign) const
 	}
 }
 
+void	Bureaucrat::executeForm(const AForm &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << _name << " couldn't execute " << form.getName() << " beacuse " << e.what() << '\n';
+	}
+	
+}
+
 const char	*Bureaucrat::GradeTooHighException::what() const noexcept
 {
 	return ("Bureaucrat grade is too high (must be >= 1)");
@@ -93,6 +107,7 @@ const char	*Bureaucrat::GradeTooLowException::what() const noexcept
 {
 	return ("Bureaucrat grade is too low (must be <= 150)");
 }
+
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &b)
 {

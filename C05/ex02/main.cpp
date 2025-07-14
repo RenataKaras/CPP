@@ -6,86 +6,71 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/07/01 15:21:24 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/07/04 14:41:17 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/07/14 18:20:01 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 int	main(void)
 {
-	{
-		try
-		{
-			Form a("Unknown form", 160, 10);
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << '\n';
-		}
-
-		try
-		{
-			Form b ("Unknown form", -1, 10);
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << '\n';
-		}
-
-		try
-		{
-			Form c("Unknown form", 10, 160);
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << '\n';
-		}
-
-		try
-		{
-			Form d("Unknown form", 10, -1);
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << '\n';
-		}
-	}
+	std::srand(std::time(nullptr));
 	
-	{
-		Form a("Passport", 95, 10);
-		
-		std::cout << a;
+	// Valid Bureaucrats
+	Bureaucrat high("Alice", 1);
+	Bureaucrat mid("Bob", 72);
+	Bureaucrat low("Charlie", 150);
 
-		Bureaucrat b("Lena", 96);
-		
-		try
-		{
-			a.beSigned(b);
-		}
-		catch(Bureaucrat::GradeTooLowException &e)
-		{
-			std::cout << "won't work" << '\n';
-		}
-		catch(Form::GradeTooLowException &e)
-		{
-			std::cout << "will work" << "\n";
-		}
+	// Create forms
+	ShrubberyCreationForm shrub("home");
+	RobotomyRequestForm robo("Bender");
+	PresidentialPardonForm pardon("Homer");
 
-		b.incrementGrade();
-		std::cout << b;
-		a.beSigned(b);
-		std::cout << a;
+	std::cout << "\n--- Attempting to execute unsigned forms ---\n";
+	try { shrub.execute(high); }
+	catch (const std::exception &e) { std::cerr << e.what() << "\n"; }
+
+	try { robo.execute(high); }
+	catch (const std::exception &e) { std::cerr << e.what() << "\n"; }
+
+	try { pardon.execute(high); }
+	catch (const std::exception &e) { std::cerr << e.what() << "\n"; }
+
+	std::cout << "\n--- Signing forms ---\n";
+	low.signForm(shrub);    // Should fail
+	mid.signForm(shrub);    // Should work
+	mid.signForm(robo);     // Should work
+	high.signForm(pardon);  // Should work
+
+	std::cout << "\n--- Executing forms with insufficient grade ---\n";
+	try { low.executeForm(shrub); }     // fail
+	catch (...) {}
+
+	try { low.executeForm(robo); }      // fail
+	catch (...) {}
+
+	try { mid.executeForm(pardon); }    // fail
+	catch (...) {}
+
+	std::cout << "\n--- Executing forms with proper authority ---\n";
+	try { mid.executeForm(shrub); }     // should succeed
+	catch (const std::exception &e) { std::cerr << e.what() << "\n"; }
+
+	try {
+		for (int i = 0; i < 5; ++i)
+			mid.executeForm(robo);     // 50% success
 	}
-	
-	{
-		Form a("Death row pardon", 80, 60);
-		Bureaucrat b ("Renata", 81);
-		b.signForm(a);
-		b.incrementGrade();
-		b.signForm(a);
-		std::cout << a;
-	}
-	
+	catch (const std::exception &e) { std::cerr << e.what() << "\n"; }
+
+	try { high.executeForm(pardon); }   // should succeed
+	catch (const std::exception &e) { std::cerr << e.what() << "\n"; }
+
+	std::cout << "\n--- Done testing ---\n";
+
 	return (0);
 }

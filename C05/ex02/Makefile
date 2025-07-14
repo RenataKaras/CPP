@@ -6,7 +6,7 @@
 #    By: rkaras <rkaras@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/06/27 15:56:19 by rkaras        #+#    #+#                  #
-#    Updated: 2025/07/04 12:07:10 by rkaras        ########   odam.nl          #
+#    Updated: 2025/07/14 18:15:16 by rkaras        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++11 -MMD -MP
 # Source and object files
 SRCS = main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp \
+		AForm.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
 		
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)
