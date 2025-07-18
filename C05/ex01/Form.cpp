@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/07/01 18:18:32 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/07/04 14:32:30 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/07/15 12:12:40 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Form::Form() : _name("Unknown form"), _signGrade(150), _execGrade(150)
 Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _signGrade(signGrade), _execGrade(execGrade)
 {
 	_checkGrades();
-	std::cout << "Parametirized constructor called" << std::endl;
+	std::cout << "Parameterized constructor called" << std::endl;
 }
 
 Form::Form(const Form &other) : _name(other._name), _signed(other._signed), _signGrade(other._signGrade), _execGrade(other._execGrade)
