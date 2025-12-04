@@ -6,7 +6,7 @@
 #    By: rkaras <rkaras@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/07/24 15:33:52 by rkaras        #+#    #+#                  #
-#    Updated: 2025/07/30 11:09:36 by rkaras        ########   odam.nl          #
+#    Updated: 2025/12/04 12:21:01 by rkaras        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,6 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++11 -MMD -MP
 # Source and object files
 SRCS =	main.cpp \
 		ScalarConverter.cpp \
-		typeChecks.cpp \
-		printout.cpp \
 		
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)

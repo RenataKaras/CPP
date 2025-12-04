@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/07/22 16:01:28 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/12/03 16:32:45 by rkaras        ########   odam.nl         */
+/*   Updated: 2025/12/04 12:21:28 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,9 @@ class ScalarConverter
 		/*
 		- when a member function of a class is declared static, it means that the function
 		belongs to the CLASS itself, and NOT to any specific instance of the class.
-		- cannot access THIS, and has no access to instance members
+		- cannot access *THIS, and has no access to instance members
 		*/
 		static void convert(const std::string &literal);
 };
-
-/* typeChecks functions */
-bool	isChar(const std::string &str);
-bool	isPseudoLiteralFloat(const std::string &str);
-bool	isPseudoLiteralDouble(const std::string &str);
-double	convertPseudoValue(const std::string &str, const int &type);
-bool	isInt(const std::string &str);
-bool	isFloat(const std::string &str);
-bool	isDouble(const std::string &str);
-
-/* printout functions */
-void	printConverted(double value, int type);
 
 #endif
