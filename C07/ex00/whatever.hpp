@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/03/10 12:23:48 by rkaras        #+#    #+#                 */
-/*   Updated: 2026/03/10 12:55:55 by rkaras        ########   odam.nl         */
+/*   Updated: 2026/03/10 13:04:42 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-T min(T a, T b)
+T const& min(T const &a, T const &b)
 {
 	if (a < b)
 		return a;
@@ -27,7 +27,7 @@ T min(T a, T b)
 }
 
 template <typename T>
-T max(T a, T b)
+T const& max(T const &a, T const &b)
 {
 	if (a < b)
 		return b;
