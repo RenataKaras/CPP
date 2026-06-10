@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   main.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/06/10 13:01:16 by rkaras        #+#    #+#                 */
+/*   Updated: 2026/06/10 13:01:18 by rkaras        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "iter.hpp"
 
 template <typename T>
@@ -21,13 +33,17 @@ int main()
 	
 	::iter(array, 4, fptr);
 	
-	::iter(Carray, 4, printArray);
-	
-	::iter(array, 4, addOne);
-	::iter(array, 4, printArray);
+	::iter(Carray, 4, printArray<const int>);
+	std::cout << std::endl;
 
-	::iter(string, sizeof(string), printArray);
-	::iter(string, sizeof(string), addOne);
-	::iter(string, sizeof(string), printArray);
+	::iter(array, 4, addOne<int>);
+	::iter(array, 4, printArray<int>);
+	std::cout << std::endl;
+
+	::iter(string, 6, printArray<char>);
+	std::cout << std::endl;
+	::iter(string, 6, addOne<char>);
+	::iter(string, 6, printArray<char>);
+	std::cout << std::endl;
 
 }

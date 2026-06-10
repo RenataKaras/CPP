@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/03/10 13:09:13 by rkaras        #+#    #+#                 */
-/*   Updated: 2026/03/10 16:09:14 by rkaras        ########   odam.nl         */
+/*   Updated: 2026/06/10 12:55:13 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 #include <iostream>
 
-template <typename T>
-
-void iter(T *array, const size_t length, void (*f)(T &))
+template <typename T, typename F>
+void iter(T *array, const size_t length, F f)
 {
 	if (f)
 	{
