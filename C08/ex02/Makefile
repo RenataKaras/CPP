@@ -5,13 +5,13 @@
 #                                                      +:+                     #
 #    By: rkaras <rkaras@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
-#    Created: 2026/03/10 16:23:13 by rkaras        #+#    #+#                  #
-#    Updated: 2026/03/10 16:23:29 by rkaras        ########   odam.nl          #
+#    Created: 2026/03/10 12:33:09 by rkaras        #+#    #+#                  #
+#    Updated: 2026/06/22 14:14:47 by rkaras        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the output program
-NAME = Array
+NAME = mutant
 
 # Compiler and flags
 CXX = c++
@@ -19,7 +19,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++11 -MMD -MP
 
 # Source and object files
 SRCS =	main.cpp \
-		 
+		
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)
 

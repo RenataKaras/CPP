@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/12/04 14:38:26 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/12/04 15:50:30 by rkaras        ########   odam.nl         */
+/*   Updated: 2026/01/08 14:06:21 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void identify(Base &p); //prints the actual type of the object referenced by p
 /*
 *dynamic_cast*
 	- only this cast can safely check the real type of a polymorphic object
-		- because it uses RTTI(Run-Time Type Information) to check real types 
+		- because it uses RTTI(Run-Time Type Information) to check real types at runtime
 	- only this cast can cast a Base * to the correct derived class
 	- can detect if the cast is valid
 */

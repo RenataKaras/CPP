@@ -6,12 +6,12 @@
 #    By: rkaras <rkaras@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/03/10 12:33:09 by rkaras        #+#    #+#                  #
-#    Updated: 2026/06/16 17:43:23 by rkaras        ########   odam.nl          #
+#    Updated: 2026/06/22 13:12:07 by rkaras        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the output program
-NAME = easyfind
+NAME = span
 
 # Compiler and flags
 CXX = c++

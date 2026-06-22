@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Span.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2026/06/22 13:22:08 by rkaras        #+#    #+#                 */
+/*   Updated: 2026/06/22 13:22:10 by rkaras        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Span.hpp"
 #include <stdexcept>
 #include <algorithm>
@@ -21,7 +33,7 @@ Span	&Span::operator=(const Span &other) {
 Span::~Span() {}
 
 void	Span::addNumber(int num) {
-	if (_numVector.size() == _maxSize)
+	if (_numVector.size() >= _maxSize)
 		throw std::out_of_range("Maximum numbers filled, no more space\n");
 	_numVector.push_back(num);
 }
@@ -34,8 +46,8 @@ unsigned int	Span::shortestSpan() const {
 	std::sort(sorted.begin(), sorted.end());
 	int shortest =  sorted[1] - sorted[0];
 	
-	for (size_t i = 0; i < sorted.size(); i++)
-		shortest = std::min(shortest, sorted[i] - sorted[i -1]);
+	for (size_t i = 1; i < sorted.size(); i++)
+		shortest = std::min(shortest, sorted[i] - sorted[i - 1]);
 	
 	return (shortest);
 }

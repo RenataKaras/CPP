@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/07/22 16:01:28 by rkaras        #+#    #+#                 */
-/*   Updated: 2025/12/04 12:21:28 by rkaras        ########   odam.nl         */
+/*   Updated: 2026/01/08 14:00:30 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <iostream>
 #include <limits>
-#include <cmath>
-#include <iomanip>
+#include <cmath> //for isnan & isinf
+#include <iomanip> //for std::fixed and std::setprecision
 
 enum Type {
 	CHAR,
@@ -45,3 +45,8 @@ class ScalarConverter
 };
 
 #endif
+
+/*
+static cast - because I'm converting known and related types, and I accept the possible data loss
+	- it's compile-time conversion
+*/
