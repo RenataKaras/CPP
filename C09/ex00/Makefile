@@ -5,20 +5,21 @@
 #                                                      +:+                     #
 #    By: rkaras <rkaras@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
-#    Created: 2026/03/10 12:33:09 by rkaras        #+#    #+#                  #
-#    Updated: 2026/07/03 12:17:51 by rkaras        ########   odam.nl          #
+#    Created: 2026/07/03 12:17:58 by rkaras        #+#    #+#                  #
+#    Updated: 2026/07/03 12:58:56 by rkaras        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the output program
-NAME = mutant
+NAME = btc
 
 # Compiler and flags
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++11 -MMD -MP
+CXXFLAGS = -Wall -Wextra -Werror -std=c++20 -MMD -MP
 
 # Source and object files
 SRCS =	main.cpp \
+		BitcoinExchange.cpp \
 		
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)
