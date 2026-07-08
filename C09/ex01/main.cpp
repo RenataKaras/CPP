@@ -6,7 +6,7 @@
 /*   By: rkaras <rkaras@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/07/08 15:01:36 by rkaras        #+#    #+#                 */
-/*   Updated: 2026/07/08 16:20:40 by rkaras        ########   odam.nl         */
+/*   Updated: 2026/07/08 16:31:24 by rkaras        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 	
 	try {
 		result = rpn.evaluate(argv[1]);
-	} catch(std::exception &e) {
-		std::cerr << "Error: " << e.what() << std::endl;
+	} catch(std::exception &) {
+		std::cerr << "Error" << std::endl;
 		return 1;
 	}
 	std::cout << result << std::endl;
